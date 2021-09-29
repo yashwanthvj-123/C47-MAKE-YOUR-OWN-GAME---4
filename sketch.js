@@ -1,8 +1,6 @@
 
 var ninja, climbNinjaImageLeft, climbNinjaImageRight, fallNinjaImage;
 
-var bird, birdImageLeft, birdImageRight, birdGroup;
-
 var blue, blueImageLeft, blueImageRight, blueGroup;
 
 var squirrel, squirrelImageLeft, squirrelImageRight, squirrelGroup;
@@ -30,13 +28,12 @@ var black_bg, black_bgImage;
 var head1, head2, head3, head4, head5, head6;
 var fruits, fruitsGroup;
 
-var gong_sound, ninjaWaha_sound, ninjaOpening_sound, ninjaBlade_sound;
+var gong_sound, ninjaOpening_sound, ninjaBlade_sound;
 var gameOver_music, gameOver_voice;
 
 function preload () {
 
   gong_sound           = loadSound ("Sounds/Gong.m4a");
-  ninjaWaha_sound      = loadSound ("Sounds/Ninja Waha.m4a");
   ninjaOpening_sound   = loadSound ("Sounds/Ninja opening sound.m4a");
   ninjaBlade_sound     = loadSound ("Sounds/Ninja blade collected.m4a");
   gameOver_music       = loadSound ("Sounds/Game over.m4a");
@@ -75,10 +72,7 @@ function preload () {
 
   climbNinjaImageRight = loadAnimation ("ClimbingAnimation/RightClimb/RightClimb1.png","ClimbingAnimation/RightClimb/RightClimb3.png","ClimbingAnimation/RightClimb/RightClimb5.png","ClimbingAnimation/RightClimb/RightClimb7.png","ClimbingAnimation/RightClimb/RightClimb9.png","ClimbingAnimation/RightClimb/RightClimb11.png","ClimbingAnimation/RightClimb/RightClimb13.png","ClimbingAnimation/RightClimb/RightClimb15.png");
 
-  fallNinjaImage       = loadAnimation ("FallingNinjaAnimation/FallingNinja1.png","FallingNinjaAnimation/FallingNinja2.png","FallingNinjaAnimation/FallingNinja3.png","FallingNinjaAnimation/FallingNinja4.png","FallingNinjaAnimation/FallingNinja5.png","FallingNinjaAnimation/FallingNinja6.png","FallingNinjaAnimation/FallingNinja7.png","FallingNinjaAnimation/FallingNinja8.png","FallingNinjaAnimation/FallingNinja9.png","FallingNinjaAnimation/FallingNinja10.png","FallingNinjaAnimation/FallingNinja11.png","FallingNinjaAnimation/FallingNinja12.png","FallingNinjaAnimation/FallingNinja13.png","FallingNinjaAnimation/FallingNinja14.png","FallingNinjaAnimation/FallingNinja15.png","FallingNinjaAnimation/FallingNinja16.png","FallingNinjaAnimation/FallingNinja17.png","FallingNinjaAnimation/FallingNinja18.png");
-
-  birdImageLeft        = loadAnimation ("BirdAnimation/Bird1.png","BirdAnimation/Bird2.png","BirdAnimation/Bird3.png","BirdAnimation/Bird4.png","BirdAnimation/Bird5.png","BirdAnimation/Bird6.png","BirdAnimation/Bird7.png","BirdAnimation/Bird8.png","BirdAnimation/Bird9.png","BirdAnimation/Bird10.png","BirdAnimation/Bird11.png","BirdAnimation/Bird12.png");
-  birdImageRight       = loadAnimation ("BirdAnimation/RightBird/RightBird1.png","BirdAnimation/RightBird/RightBird2.png","BirdAnimation/RightBird/RightBird3.png","BirdAnimation/RightBird/RightBird4.png","BirdAnimation/RightBird/RightBird5.png","BirdAnimation/RightBird/RightBird6.png","BirdAnimation/RightBird/RightBird7.png","BirdAnimation/RightBird/RightBird8.png","BirdAnimation/RightBird/RightBird9.png","BirdAnimation/RightBird/RightBird10.png","BirdAnimation/RightBird/RightBird11.png","BirdAnimation/RightBird/RightBird12.png");
+  fallNinjaImage       = loadAnimation ("FallingNinjaAnimation/FallingNinja1.png","FallingNinjaAnimation/FallingNinja3.png","FallingNinjaAnimation/FallingNinja5.png","FallingNinjaAnimation/FallingNinja7.png","FallingNinjaAnimation/FallingNinja9.png","FallingNinjaAnimation/FallingNinja11.png","FallingNinjaAnimation/FallingNinja13.png","FallingNinjaAnimation/FallingNinja15.png","FallingNinjaAnimation/FallingNinja17.png");
 
   blueImageLeft        = loadAnimation ("ObstacleNinjaAnimation/LeftBlue/LeftBlue1.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue2.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue3.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue4.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue5.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue6.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue7.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue8.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue9.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue10.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue11.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue12.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue13.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue14.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue15.png","ObstacleNinjaAnimation/LeftBlue/LeftBlue16.png");
   blueImageRight       = loadAnimation ("ObstacleNinjaAnimation/BlueNinja1.png","ObstacleNinjaAnimation/BlueNinja2.png","ObstacleNinjaAnimation/BlueNinja3.png","ObstacleNinjaAnimation/BlueNinja4.png","ObstacleNinjaAnimation/BlueNinja5.png","ObstacleNinjaAnimation/BlueNinja6.png","ObstacleNinjaAnimation/BlueNinja7.png","ObstacleNinjaAnimation/BlueNinja8.png","ObstacleNinjaAnimation/BlueNinja9.png","ObstacleNinjaAnimation/BlueNinja10.png","ObstacleNinjaAnimation/BlueNinja11.png","ObstacleNinjaAnimation/BlueNinja12.png","ObstacleNinjaAnimation/BlueNinja13.png","ObstacleNinjaAnimation/BlueNinja14.png","ObstacleNinjaAnimation/BlueNinja15.png","ObstacleNinjaAnimation/BlueNinja16.png");
@@ -93,7 +87,6 @@ function setup () {
   createCanvas(500, displayHeight-130);
 
   blueGroup       = createGroup ();
-  birdGroup       = createGroup ();
   squirrelGroup   = createGroup ();
   ninjaBladeGroup = createGroup ();
   fruitsGroup     = createGroup ();
@@ -190,7 +183,6 @@ function draw () {
   
   if (gameState==="PLAY") {
 
-    //spawnBirds ();
     spawnFruits();
     spwanNinjaBlade ();
     spawnBlue ();
@@ -209,7 +201,6 @@ function draw () {
     wallLeft.velocityY = (4+score/100);
     wallRight.velocityY = (4+score/100);
 
-    birdGroup.setVelocityYEach (wallLeft.velocityY);
     squirrelGroup.setVelocityYEach (wallLeft.velocityY);
     blueGroup.setVelocityYEach (wallLeft.velocityY);
 
@@ -237,7 +228,7 @@ function draw () {
       fruitsCollected=fruitsCollected+1;
     }
 
-    if (ninja.isTouching(birdGroup) || ninja.isTouching(squirrelGroup) || ninja.isTouching(blueGroup) ) {
+    if (ninja.isTouching(squirrelGroup) || ninja.isTouching(blueGroup) ) {
       gameState="FALL";
       gameOver_music.play ();
     }
@@ -247,7 +238,7 @@ function draw () {
     fruitsGroup.depth=laundryGroup.depth;
     fruitsGroup.depth=fruitsGroup.depth+1;*/
 
-    fill ("Black");
+    fill ("white");
     textSize (16);
     //text ("Score : " +score, 80,20);
     text ("Ninja blades collected : " + bladesCollected, 250, 20);
@@ -277,8 +268,6 @@ function draw () {
   }
 
   if (gameState==="END") {
-
-    //birdGroup.destroyEach();
     
     gameover.visible=true;
     replay.visible=true;
@@ -297,27 +286,6 @@ function draw () {
   }
 
 }
-
-/*function spawnBirds () {
-
-  if (frameCount % 150 === 0) {
-
-    var position=[59,450];
-    var random = Math.round( Math.random(0,1) );
-
-    bird = createSprite (position[random],0,0,0);
-
-    if (random===0) { bird.addAnimation ("bird1",birdImageLeft); }
-    else if (random===1) {bird.addAnimation ("bird2",birdImageRight);}
-
-    bird.lifetime = -1;
-    bird.velocityY = 8;
-    birdGroup.add (bird);
-    if (bird.y>=100) { birdGroup.destroyEach(); }
-
-  }
-
-}*/
 
 function spwanNinjaBlade () {
 
